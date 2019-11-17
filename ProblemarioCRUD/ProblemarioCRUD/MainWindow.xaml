@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProblemarioCRUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProblemarioCRUD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="650">
+    <Grid Height="263" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+        <Label Content="REGISTROS DE CALIFICACIONES" HorizontalAlignment="Left" Height="41" Margin="181,10,0,0" VerticalAlignment="Top" Width="296" RenderTransformOrigin="0.407,0.489" FontSize="22" FontFamily="Oswald"/>
+        <Button x:Name="AgregarBtn" Content="Agregar" HorizontalAlignment="Left" Height="32" Margin="492,63,0,0" VerticalAlignment="Top" Width="100" Click="AgregarBtn_Click" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontSize="16"/>
+        <Button x:Name="EditarBtn" Content="Editar" HorizontalAlignment="Left" Height="32" Margin="492,135,0,0" VerticalAlignment="Top" Width="100" Click="EditarBtn_Click" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontSize="16"/>
+        <Button x:Name="EliminarBtn" Content="Eliminar" HorizontalAlignment="Left" Height="32" Margin="492,204,0,0" VerticalAlignment="Top" Width="100" Click="EliminarBtn_Click" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontSize="16"/>
+        <DataGrid x:Name="RegistrosList" HorizontalAlignment="Left" Height="173" Margin="21,63,0,0" VerticalAlignment="Top" Width="406" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+
+    </Grid>
+</Window>
