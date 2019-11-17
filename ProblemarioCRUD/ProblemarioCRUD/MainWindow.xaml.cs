@@ -46,23 +46,28 @@ namespace ProblemarioCRUD
 
         private void EditarBtn_Click(object sender, RoutedEventArgs e)
         {
-            Registros registro = (Registros)RegistrosList.SelectedItems[0];
-            EditarRegistro form = new EditarRegistro(registro.Id, registro.Nombre, registro.Grado, registro.Grupo, registro.Calificacion);
-            form.ShowDialog();
-            LeerDatos();
+            if (RegistrosList.SelectedItems.Count > 0)
+            {
+                Registros registro = (Registros)RegistrosList.SelectedItems[0];
+                EditarRegistro form = new EditarRegistro(registro.Id, registro.Nombre, registro.Grado, registro.Grupo, registro.Calificacion);
+                form.ShowDialog();
+                LeerDatos();
+            }
         }
 
         private void EliminarBtn_Click(object sender, RoutedEventArgs e)
         {
-            Registros registro = (Registros)RegistrosList.SelectedItems[0];
-            using (SQLiteConnection conn = new SQLiteConnection(rutaBaseDeDatos))
+            if (RegistrosList.SelectedItems.Count > 0)
             {
-                conn.CreateTable<Registros>();
-                conn.Delete(registro);
+                Registros registro = (Registros)RegistrosList.SelectedItems[0];
+                using (SQLiteConnection conn = new SQLiteConnection(rutaBaseDeDatos))
+                {
+                    conn.CreateTable<Registros>();
+                    conn.Delete(registro);
+                }
+                LeerDatos();
             }
-            LeerDatos();
         }
-
         private void ActualizarBtn_Click(object sender, RoutedEventArgs e)
         {
             LeerDatos();
